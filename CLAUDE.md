@@ -18,7 +18,18 @@ kommit-backend/
 ├── .vscode/
 ├── docs/
 │   └── TECH.md
+├── src/
+│   ├── index.ts
+│   ├── app.ts
+│   ├── config/
+│   ├── middlewares/
+│   ├── routes/
+│   ├── controllers/
+│   └── services/
 ├── package.json
 ├── pnpm-lock.yaml
-└── pnpm-workspace.yaml
+├── pnpm-workspace.yaml
+└── tsconfig.json
 ```
+
+Ce fichier doit être mis à jour au fur et à mesure que le repo évolue, l'arborescence y compris.
