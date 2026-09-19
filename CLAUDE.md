@@ -18,6 +18,8 @@ kommit-backend/
 ├── .vscode/
 ├── docs/
 │   └── TECH.md
+├── prisma/
+│   └── schema.prisma
 ├── src/
 │   ├── index.ts
 │   ├── app.ts
@@ -25,10 +27,12 @@ kommit-backend/
 │   ├── middlewares/
 │   ├── routes/
 │   ├── controllers/
-│   └── services/
+│   ├── services/
+│   └── repositories/
 ├── package.json
 ├── pnpm-lock.yaml
 ├── pnpm-workspace.yaml
+├── prisma.config.ts
 └── tsconfig.json
 ```
 
