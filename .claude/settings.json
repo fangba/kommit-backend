@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && pnpm lint 1>&2 || exit 2",
+            "timeout": 120,
+            "statusMessage": "Lint de fin de tour (ESLint)…"
+          }
+        ]
+      }
+    ]
+  }
+}

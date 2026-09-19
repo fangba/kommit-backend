@@ -1,0 +1,18 @@
+# DEPENDANCES & BUILD
+node_modules/
+dist/
+build/
+
+# ENV
+.env
+.env.*
+!.env.example
+
+# LOGS
+*.log
+
+# OS
+.DS_Store
+
+# PRISMA
+prisma/generated/
