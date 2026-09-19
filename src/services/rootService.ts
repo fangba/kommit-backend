@@ -8,7 +8,7 @@ const pkg = JSON.parse(readFileSync(path.join(__dirname, '../../package.json'), 
   version: string
 }
 
-const endpoints = ['GET /', 'GET /health']
+const endpoints = ['GET /', 'GET /health', 'GET /db-health']
 
 export function getServiceInfo() {
   return {
