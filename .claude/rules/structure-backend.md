@@ -10,8 +10,8 @@ src/
 ├── middlewares/      # middlewares Express (404, gestion des erreurs…)
 ├── routes/           # déclaration des routes. Aucun corps de handler.
 ├── controllers/      # les handlers : lire la requête, appeler un service, répondre.
-└── services/         # la logique métier. Ne connaît ni Express, ni req, ni res.
-
+├── services/         # la logique métier. Ne connaît ni Express, ni req, ni res.
+└── repositories/     # l'accès aux données. Implémente les interfaces de repository des services.
 ```
 
 ## Le rôle de chaque emplacement
@@ -33,6 +33,8 @@ commitsRoutes.get('/', getCommits)
 **`controllers/`** — un fichier par groupe de routes, qui exporte les handlers. Un controller lit `req`, appelle un service, écrit dans `res`. Il ne contient pas de logique métier : dès qu'il y a une décision, un calcul ou un accès aux données, ça part dans `services/`.
 
 **`services/`** — la logique métier, en fonctions qui prennent et rendent des données. **Un service ne reçoit jamais `req` ni `res`** et n'importe jamais Express : il doit rester appelable depuis un test ou un script sans serveur HTTP.
+
+**`repositories/`** — l'accès aux données (Prisma/Postgres). Un repository implémente une **interface déclarée par le service** (le *port*) : le service dit ce dont il a besoin (`findById`, `create`…), le repository le remplit avec la vraie base. Le service reçoit son repository **par injection** et ne connaît jamais Prisma ; en test, on injecte un faux repository. Un repository ne reçoit jamais `req` ni `res`.
 
 ## Nommage des fichiers
 
